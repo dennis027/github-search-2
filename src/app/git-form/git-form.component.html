@@ -1,8 +1,15 @@
- 
-    <div class>
-        <div class="col-md-12">
-            <input type="text" placeholder="Search..." class="form-control" ></div>
-            <button type="submit" class ="btn btn-primary">Submit..</button>
-        </div>
-    
-</form>
+<div *ngIf="showInput">
+	<div class="col-md-2"></div>
+	<div class="col-md-8 git-form">
+		<!-- <h1 class="heading">Github Search</h1> -->
+		
+		<form (ngSubmit)='submitUsername()' #gitForm='ngForm' name="gitForm">
+			
+					<input type="text" class="form-control input-lg mb15 user-input" id="username" [(ngModel)]="username" name="username" autocomplete="off" placeholder="Search Github Username">
+					<button type="submit" class="btn btn-success btn-lg btn-block">Search GitHub username</button>
+				
+		</form>
+	</div>
+	<div class="col-md-2"></div>	
+</div>
+<app-git-search-results *ngIf="showData" (toggleBack)="showUserInput($event)"></app-git-search-results>
