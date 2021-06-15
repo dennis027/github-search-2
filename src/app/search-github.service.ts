@@ -11,5 +11,6 @@ repository!: Repository;
 repoData! : [];
   constructor(private http: HttpClient) {
     this.user = new User("",0,"","",new Date());
+    this.repository= new Repository("","",new Date(),"","");
    }
 }
