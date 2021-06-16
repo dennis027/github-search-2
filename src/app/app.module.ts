@@ -10,7 +10,8 @@ import { SearchGithubService } from './search-github.service';
 import { DateFormatPipe } from './date-format.pipe'; 
 import { CloneHighlighterDirective } from './clone-highlighter.directive'; 
 import { DaysCountPipe } from './days-count.pipe'; 
-import { TimeAgoPipe } from 'time-ago-pipe'; 
+import { TimeAgoPipe } from 'time-ago-pipe';
+import { BaseComponent } from './base/base.component'; 
 
 
 @NgModule({
@@ -23,7 +24,9 @@ import { TimeAgoPipe } from 'time-ago-pipe';
       CloneHighlighterDirective,
       DaysCountPipe,
      
-      TimeAgoPipe
+      TimeAgoPipe,
+     
+      BaseComponent
    ], 
 
    imports: [

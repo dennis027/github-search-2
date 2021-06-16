@@ -17,7 +17,7 @@ export class SearchGithubService {
 	showData:boolean;
 
   	constructor(private http: HttpClient) { 
-  		this.user = new User("",0,"","",new Date(),new Date(),"");
+  		this.user = new User("",0,"","",new Date());
   		this.repository = new Repository("","","",new Date(),"","","",new Date()); 		
   	}
 
@@ -49,8 +49,8 @@ export class SearchGithubService {
 	            this.user.login=response.login;
 	            this.user.public_repos=response.public_repos;
 	            this.user.created_at=response.created_at;
-	            this.user.updated_at=response.updated_at;
-	            this.user.html_url=response.html_url;
+	            // this.user.updated_at=response.updated_at;
+	            // this.user.html_url=response.html_url;
 
 	            resolve()
 	        },
