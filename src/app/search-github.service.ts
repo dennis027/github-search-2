@@ -17,7 +17,7 @@ export class SearchGithubService {
 	showData:boolean;
 
   	constructor(private http: HttpClient) { 
-  		this.user = new User("",0,"","",new Date());
+  		this.user = new User("",0,"","",new Date(),new Date(),"");
   		this.repository = new Repository("","","",new Date(),"","","",new Date()); 		
   	}
 
@@ -35,9 +35,18 @@ export class SearchGithubService {
 	        avatar_url:string,
 	        created_at:Date, 
 	        updated_at:Date,
-	        name:string,
-	        full_name:string, 
-	        html_url:string   
+	        // name:string,
+	        // full_name:string, 
+	        html_url:string  
+			
+			
+		// 	public bio: string,
+		//  public public_repos: number,
+		//   public login:string, 
+		//   public avatar_url:string,
+		//    public created_at:Date, 
+		//    public updated_at:Date,
+		//     public html_url: string
 	    }
 
 	    let promise =new Promise((resolve,reject)=>{
@@ -49,10 +58,10 @@ export class SearchGithubService {
 	            this.user.login=response.login;
 	            this.user.public_repos=response.public_repos;
 	            this.user.created_at=response.created_at;
-	            // this.user.updated_at=response.updated_at;
-	            // this.user.html_url=response.html_url;
+	            this.user.updated_at=response.updated_at;
+	            this.user.html_url=response.html_url;
 
-	            resolve()
+	            resolve("")
 	        },
 	        error=>{
 	                reject(error)
@@ -69,7 +78,7 @@ export class SearchGithubService {
 	        		this.repoData.push(this.newUserData);
 	        	}
 
-	            resolve()
+	            resolve("")
 
 	        },
 	        error=>{
